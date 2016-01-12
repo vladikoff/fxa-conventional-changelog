@@ -4,7 +4,7 @@ var compareFunc = require('compare-func');
 var readFileSync = require('fs').readFileSync;
 var resolve = require('path').resolve;
 var semver = require('semver');
-var _ = require('lodash');
+var map = require('lodash.map');
 
 function presetOpts() {
   var parserOpts = {
@@ -47,7 +47,7 @@ function presetOpts() {
         commit.subject = commit.subject.substring(0, 80);
       }
 
-      _.map(commit.notes, function(note) {
+      map(commit.notes, function(note) {
         if (note.title === 'BREAKING CHANGE') {
           note.title = 'BREAKING CHANGES';
         }
