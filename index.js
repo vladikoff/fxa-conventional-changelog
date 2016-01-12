@@ -21,6 +21,11 @@ function presetOpts() {
 
   var writerOpts = {
     transform: function(commit) {
+      if (commit.type === null) {
+        // It's probably a merged branch or PR, so skip this commit.
+        return;
+      }
+
       if (commit.type === 'feat') {
         commit.type = 'Features';
       } else if (commit.type === 'fix') {
@@ -31,8 +36,6 @@ function presetOpts() {
         commit.type = 'Reverts';
       } else if (commit.type === 'refactor') {
         commit.type = 'Refactor';
-      } else {
-        return;
       }
 
       if (commit.scope === '*') {
