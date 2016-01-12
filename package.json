@@ -1,21 +1,22 @@
 {
   "name": "fxa-conventional-changelog",
-  "version": "1.0.0",
   "description": "Conventional Changelog Template for FxA",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha tests/"
-  },
-  "author": "",
-  "license": "MPL-2.0",
+  "version": "1.0.0",
+  "author": "vladikoff",
   "dependencies": {
     "compare-func": "1.3.1",
     "lodash": "3.10.1",
-    "mocha": "2.3.2",
     "semver": "5.0.1"
   },
   "devDependencies": {
     "assert": "1.3.0",
+    "mocha": "2.3.2",
     "tap": "1.4.1"
+  },
+  "license": "MPL-2.0",
+  "main": "index.js",
+  "repository": "vladikoff/fxa-conventional-changelog",
+  "scripts": {
+    "test": "mocha tests/"
   }
 }
